@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - SkillBridge</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Login to SkillBridge</h2>
+        <% if (error) { %>
+            <p class="error"><%= error %></p>
+        <% } %>
+        <form action="/auth/login" method="POST">
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+        <p>Don't have an account? <a href="/auth/register">Register</a></p>
+        <p><a href="/">Back to Home</a></p>
+        <div class="demo-info">
+            <h4>Demo Accounts:</h4>
+            <p>Admin: admin@skillbridge.com / password123</p>
+            <p>Instructor: john@skillbridge.com / password123</p>
+            <p>Student: sarah@skillbridge.com / password123</p>
+        </div>
+    </div>
+</body>
+</html>

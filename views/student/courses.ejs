@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Courses</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">SkillBridge</h1>
+            <ul class="nav-links">
+                <li><a href="/student/dashboard">Dashboard</a></li>
+                <li><a href="/auth/logout" class="btn">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container" style="margin-top: 50px;">
+        <h2>All Available Courses</h2>
+        <div class="course-grid">
+            <% courses.forEach(course => { %>
+                <div class="course-card">
+                    <h3><%= course.title %></h3>
+                    <p><%= course.description %></p>
+                    <p><strong>Instructor:</strong> <%= course.instructor_name %></p>
+                    <p><strong>Duration:</strong> <%= course.duration %></p>
+                    <p><strong>Level:</strong> <%= course.level %></p>
+                    <form action="/student/enroll/<%= course.id %>" method="POST">
+                        <button type="submit" class="btn btn-primary">Enroll Now</button>
+                    </form>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+</body>
+</html>

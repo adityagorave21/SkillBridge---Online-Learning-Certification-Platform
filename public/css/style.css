@@ -1,0 +1,336 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navbar */
+.navbar {
+    background: #2c3e50;
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #3498db;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #3498db;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #3498db;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #2980b9;
+}
+
+.btn-primary {
+    background: #27ae60;
+}
+
+.btn-primary:hover {
+    background: #229954;
+}
+
+.btn-danger {
+    background: #e74c3c;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+}
+
+.btn-danger:hover {
+    background: #c0392b;
+}
+
+.btn-large {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+}
+
+/* Features */
+.features {
+    padding: 60px 20px;
+    background: white;
+}
+
+.features .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.feature-box {
+    text-align: center;
+    padding: 30px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.feature-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+/* Form Container */
+.form-container {
+    max-width: 500px;
+    margin: 100px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.form-container h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+}
+
+.form-container p {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.form-container a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.error {
+    color: #e74c3c;
+    background: #fadbd8;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.demo-info {
+    margin-top: 20px;
+    padding: 15px;
+    background: #e8f5e9;
+    border-radius: 5px;
+}
+
+.demo-info h4 {
+    margin-bottom: 10px;
+    color: #27ae60;
+}
+
+.demo-info p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+/* Course Grid */
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.course-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.course-card h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.course-card p {
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.badge {
+    display: inline-block;
+    padding: 5px 15px;
+    background: #27ae60;
+    color: white;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin: 10px 0;
+}
+
+/* Quiz */
+.quiz-list {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.quiz-list li {
+    background: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.quiz-question {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border-left: 4px solid #3498db;
+}
+
+.quiz-question h4 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.quiz-question label {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.quiz-question label:hover {
+    background: #f8f9fa;
+}
+
+.quiz-question input[type="radio"] {
+    margin-right: 10px;
+}
+
+/* Question Block */
+.question-block {
+    background: #f8f9fa;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.question-block h4 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+/* Admin Table */
+.admin-table {
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+}
+
+.admin-table thead {
+    background: #2c3e50;
+    color: white;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 15px;
+    text-align: left;
+}
+
+.admin-table tbody tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.admin-table tbody tr:hover {
+    background: #e8f5e9;
+}

@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= quiz.title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container" style="margin-top: 50px;">
+        <h2><%= quiz.title %></h2>
+        <p>Total Marks: <%= quiz.total_marks %></p>
+
+        <form action="/student/quiz/<%= quiz.id %>/submit" method="POST">
+            <% questions.forEach((q, index) => { %>
+                <div class="quiz-question">
+                    <h4>Question <%= index + 1 %>: <%= q.question_text %> (<%= q.marks %> marks)</h4>
+                    <label>
+                        <input type="radio" name="question_<%= q.id %>" value="A" required>
+                        A) <%= q.option_a %>
+                    </label><br>
+                    <label>
+                        <input type="radio" name="question_<%= q.id %>" value="B">
+                        B) <%= q.option_b %>
+                    </label><br>
+                    <label>
+                        <input type="radio" name="question_<%= q.id %>" value="C">
+                        C) <%= q.option_c %>
+                    </label><br>
+                    <label>
+                        <input type="radio" name="question_<%= q.id %>" value="D">
+                        D) <%= q.option_d %>
+                    </label>
+                </div>
+            <% }); %>
+            <button type="submit" class="btn btn-primary">Submit Quiz</button>
+        </form>
+    </div>
+</body>
+</html>

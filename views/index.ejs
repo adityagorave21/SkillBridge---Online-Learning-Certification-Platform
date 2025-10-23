@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillBridge - Online Learning Platform</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">SkillBridge</h1>
+            <ul class="nav-links">
+                <% if (user) { %>
+                    <li>Welcome, <%= user.username %></li>
+                    <li><a href="/auth/logout" class="btn">Logout</a></li>
+                <% } else { %>
+                    <li><a href="/auth/login" class="btn">Login</a></li>
+                    <li><a href="/auth/register" class="btn btn-primary">Register</a></li>
+                <% } %>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Learn New Skills, Earn Certificates</h1>
+            <p>Join thousands of students learning from expert instructors</p>
+            <a href="/auth/register" class="btn btn-large">Get Started</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="feature-box">
+                <h3>📚 Expert Courses</h3>
+                <p>Learn from industry professionals</p>
+            </div>
+            <div class="feature-box">
+                <h3>📝 Quizzes & Tests</h3>
+                <p>Test your knowledge</p>
+            </div>
+            <div class="feature-box">
+                <h3>🎓 Certificates</h3>
+                <p>Earn verified certificates</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

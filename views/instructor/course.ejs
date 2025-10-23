@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage <%= course.title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">SkillBridge</h1>
+            <ul class="nav-links">
+                <li><a href="/instructor/dashboard">Dashboard</a></li>
+                <li><a href="/auth/logout" class="btn">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container" style="margin-top: 50px;">
+        <h2><%= course.title %></h2>
+        <p><%= course.description %></p>
+
+        <h3>Quizzes</h3>
+        <a href="/instructor/course/<%= course.id %>/quiz/create" class="btn btn-primary">Create Quiz</a>
+        
+        <% if (quizzes.length === 0) { %>
+            <p>No quizzes created yet.</p>
+        <% } else { %>
+            <ul class="quiz-list">
+                <% quizzes.forEach(quiz => { %>
+                    <li><strong><%= quiz.title %></strong> - <%= quiz.total_marks %> marks</li>
+                <% }); %>
+            </ul>
+        <% } %>
+    </div>
+</body>
+</html>

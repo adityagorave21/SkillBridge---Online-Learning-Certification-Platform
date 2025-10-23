@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - SkillBridge</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Register for SkillBridge</h2>
+        <% if (error) { %>
+            <p class="error"><%= error %></p>
+        <% } %>
+        <form action="/auth/register" method="POST">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <select name="role" required>
+                <option value="student">Student</option>
+                <option value="instructor">Instructor</option>
+            </select>
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+        <p>Already have an account? <a href="/auth/login">Login</a></p>
+    </div>
+</body>
+</html>

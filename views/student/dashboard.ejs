@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">SkillBridge</h1>
+            <ul class="nav-links">
+                <li>Welcome, <%= user.username %></li>
+                <li><a href="/student/courses">Browse Courses</a></li>
+                <li><a href="/auth/logout" class="btn">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container" style="margin-top: 50px;">
+        <h2>My Enrolled Courses</h2>
+        <div class="course-grid">
+            <% if (enrollments.length === 0) { %>
+                <p>You haven't enrolled in any courses yet. <a href="/student/courses">Browse courses</a></p>
+            <% } else { %>
+                <% enrollments.forEach(course => { %>
+                    <div class="course-card">
+                        <h3><%= course.title %></h3>
+                        <p><%= course.description %></p>
+                        <p>Progress: <%= course.progress %>%</p>
+                        <% if (course.completed) { %>
+                            <span class="badge">Completed ✓</span>
+                        <% } %>
+                        <a href="/student/course/<%= course.id %>" class="btn">View Course</a>
+                    </div>
+                <% }); %>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>

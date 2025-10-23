@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Course</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">SkillBridge</h1>
+            <ul class="nav-links">
+                <li><a href="/instructor/dashboard">Dashboard</a></li>
+                <li><a href="/auth/logout" class="btn">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="form-container">
+        <h2>Create New Course</h2>
+        <form action="/instructor/course/create" method="POST">
+            <input type="text" name="title" placeholder="Course Title" required>
+            <textarea name="description" placeholder="Course Description" rows="5" required></textarea>
+            <input type="text" name="duration" placeholder="Duration (e.g., 8 weeks)" required>
+            <select name="level" required>
+                <option value="Beginner">Beginner</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Advanced">Advanced</option>
+            </select>
+            <button type="submit" class="btn btn-primary">Create Course</button>
+        </form>
+    </div>
+</body>
+</html>
